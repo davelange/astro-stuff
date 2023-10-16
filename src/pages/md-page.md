@@ -1,5 +1,6 @@
 ---
 title: "MD Page"
+page: "MD Page"
 layout: "../layouts/Base.astro"
 ---
 

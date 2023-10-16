@@ -1,8 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
+import { Counter as ReactCounter } from "../components/Counter.tsx";
+import SvelteCounter from "../components/Counter.svelte";
 ---
 
 <Base title="Astro stuff">
-  <h1>Hello there!</h1>
-  <p>Astro component</p>
+  <h1 class="text-3xl">Hello there!</h1>
+  <SvelteCounter client:idle />
 </Base>
