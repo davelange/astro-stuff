@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/Base.astro";
+import { Counter as ReactCounter } from "../components/Counter.tsx";
+import SvelteCounter from "../components/Counter.svelte";
+---
+
+<BaseLayout title="Multi Frameworks">
+  <div class="flex flex-col gap-8">
+    <h1 class="text-4xl font-bold text-indigo-100 mb-4">Multi framework</h1>
+
+    <!-- React -->
+    <ReactCounter client:idle />
+
+    <!-- Svelte -->
+    <SvelteCounter client:idle />
+  </div>
+</BaseLayout>

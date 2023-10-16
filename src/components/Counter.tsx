@@ -1,14 +1,21 @@
 import { useState } from "react";
 
-export default function Counter() {
+export function Counter() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <p>Count: {count}</p>
-      <button type="button" onClick={() => setCount((value) => value + 1)}>
-        Increment
-      </button>
+      <p>React</p>
+      <div className="flex gap-4 items-center">
+        <p>Count: {count}</p>
+        <button
+          type="button"
+          onClick={() => setCount((value) => value + 1)}
+          className="bg-indigo-500 py-2 px-8"
+        >
+          Increment
+        </button>
+      </div>
     </div>
   );
 }
