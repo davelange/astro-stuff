@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["IBM Plex Sans", "sans-serif"],
+        sans: ["Atkinson Hyperlegible", "sans-serif"],
       },
       fontWeight: {
         bold: 700,
         regular: 400,
-      }
+      },
     },
   },
   plugins: [],
