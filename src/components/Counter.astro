@@ -1,0 +1,22 @@
+<div>
+  <p>Vanilla</p>
+  <div class="flex gap-4 items-center">
+    <p data-js-count-display>Count: 0</p>
+    <button type="button" data-js-count-btn class="bg-indigo-500 py-2 px-8">
+      Increment
+    </button>
+  </div>
+</div>
+
+<script>
+  let count = 0;
+  const displayEl = document.querySelector("[data-js-count-display]");
+  const btnEl = document.querySelector("[data-js-count-btn]");
+
+  btnEl?.addEventListener("click", () => {
+    if (!displayEl) return;
+
+    count++;
+    displayEl.innerHTML = `Count: ${count}`;
+  });
+</script>

@@ -1,9 +1,29 @@
+---
+const links = [
+  {
+    href: "/markdown",
+    title: "Markdown page",
+  },
+  {
+    href: "/frameworks",
+    title: "Multi framework",
+  },
+  {
+    href: "/users",
+    title: "Data fetching",
+  },
+];
+---
+
 <header class="flex justify-between">
   <a href="/" title="Home" class="text-indigo-400">Home</a>
   <nav class="flex gap-4">
-    <a href="md-page" title="MD page" class="text-indigo-400"> Markdown page</a>
-    <a href="frameworks" title="Frameworks" class="text-indigo-400">
-      Frameworks
-    </a>
+    {
+      links.map((link) => (
+        <a href={link.href} title={link.title} class="text-indigo-400">
+          {link.title}
+        </a>
+      ))
+    }
   </nav>
 </header>

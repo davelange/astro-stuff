@@ -1,0 +1,23 @@
+---
+import { getUsers } from "../../lib/api";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const users = await getUsers();
+
+  return users.map((user) => ({
+    params: { id: user.id },
+    props: { user },
+  }));
+}
+
+const { id } = Astro.params;
+const { user } = Astro.props;
+---
+
+<Base title={user.firstName}>
+  <h1 class="text-4xl font-bold text-indigo-100 mb-4">
+    {user.firstName}&nbsp;{user.lastName}
+    <img class="w-20 mb-4" src={user.image} alt={user.firstName} />
+  </h1>
+</Base>

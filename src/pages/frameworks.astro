@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/Base.astro";
 import { Counter as ReactCounter } from "../components/Counter.tsx";
 import SvelteCounter from "../components/Counter.svelte";
+import VanilaCounter from "../components/Counter.astro";
 ---
 
 <BaseLayout title="Multi Frameworks">
@@ -13,5 +14,8 @@ import SvelteCounter from "../components/Counter.svelte";
 
     <!-- Svelte -->
     <SvelteCounter client:idle />
+
+    <!-- Vanila -->
+    <VanilaCounter />
   </div>
 </BaseLayout>

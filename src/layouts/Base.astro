@@ -19,14 +19,12 @@ const { title, frontmatter } = Astro.props;
     />
     <title>{title || frontmatter.title}</title>
   </head>
-  <body
-    class="bg-gradient-to-t from-slate-800 to-slate-900 leading-relaxed tracking-wide"
-  >
+  <body class="bg-gradient-to-t from-slate-800 to-slate-900">
     <div
-      class="text-slate-100 min-h-screen flex flex-col py-10 gap-16 mx-auto w-8/12"
+      class="text-slate-100 min-h-screen flex flex-col py-10 gap-16 mx-auto w-8/12 leading-relaxed tracking-wide"
     >
       <Header />
-      <main class="flex-1">
+      <main class="flex-1 h-full">
         <slot />
       </main>
       <Footer />

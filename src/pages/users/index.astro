@@ -1,0 +1,17 @@
+---
+import { getUsers } from "../../lib/api";
+import Base from "../../layouts/Base.astro";
+import UserCard from "../../components/UserCard.svelte";
+
+// Top level await
+// Data fetched at compile time
+const users = await getUsers();
+---
+
+<Base title="Data fetching">
+  <h1 class="text-4xl font-bold text-indigo-100 mb-4">Data fetching</h1>
+
+  <div class="flex gap-10 mt-10 flex-wrap">
+    {users?.map((user) => <UserCard {user} />)}
+  </div>
+</Base>
