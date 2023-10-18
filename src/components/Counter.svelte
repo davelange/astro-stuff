@@ -5,7 +5,6 @@
 <div>
   <p>Svelte</p>
   <div class="flex gap-4 items-center">
-    <p>Count: {count}</p>
     <button
       type="button"
       on:click={() => (count += 1)}
@@ -13,5 +12,6 @@
     >
       Increment
     </button>
+    <p>Count: {count}</p>
   </div>
 </div>

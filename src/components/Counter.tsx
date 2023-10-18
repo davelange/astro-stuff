@@ -7,7 +7,6 @@ export function Counter() {
     <div>
       <p>React</p>
       <div className="flex gap-4 items-center">
-        <p>Count: {count}</p>
         <button
           type="button"
           onClick={() => setCount((value) => value + 1)}
@@ -15,6 +14,7 @@ export function Counter() {
         >
           Increment
         </button>
+        <p>Count: {count}</p>
       </div>
     </div>
   );

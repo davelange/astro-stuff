@@ -7,7 +7,7 @@ export type User = {
 };
 
 export async function getUsers(): Promise<User[]> {
-  const req = await fetch("https://dummyjson.com/users?limit=5");
+  const req = await fetch("https://dummyjson.com/users?limit=8");
   const data = await req.json();
 
   return data?.users || [];

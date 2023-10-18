@@ -10,6 +10,9 @@ export default {
         bold: 700,
         regular: 400,
       },
+      dropShadow: {
+        glow: "0 0 16px rgba(255,255,255, 0.25)",
+      },
     },
   },
   plugins: [],
