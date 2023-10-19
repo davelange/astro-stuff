@@ -23,7 +23,8 @@ export default defineConfig({
       {
         name: "post",
         label: "Posts",
-        path: "content/posts",
+        path: "src/content/posts",
+        format: "mdx",
         fields: [
           {
             type: "string",
@@ -37,6 +38,40 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
+            templates: [
+              {
+                name: "Callout",
+                label: "Callout",
+                fields: [
+                  {
+                    name: "text",
+                    label: "Content",
+                    type: "string",
+                  },
+                ],
+              },
+              {
+                name: "Banner",
+                label: "Banner",
+                fields: [
+                  {
+                    name: "title",
+                    label: "Title",
+                    type: "string",
+                  },
+                  {
+                    name: "description",
+                    label: "Description",
+                    type: "string",
+                  },
+                  {
+                    name: "image",
+                    label: "Image",
+                    type: "image",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },

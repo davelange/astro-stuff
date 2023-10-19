@@ -1,0 +1,22 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+---
+
+<Base>
+  <h1 class="text-4xl font-bold text-indigo-100 mb-4 drop-shadow-glow">CMS content</h1>
+  <p>Created in the CMS &arrr; stored locally as MDX. Because just markdown sometimes isn't enough</p>
+
+  <div class="flex flex-col gap-10 mt-10">
+    {
+      posts.map((post) => (
+        <a href={`/posts/${post.slug}`}>
+          <h2 class="font-bold text-xl mb-2">&rarr; {post.data.title}</h2>
+          <p>{post.data.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</Base>

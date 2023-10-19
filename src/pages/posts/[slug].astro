@@ -1,0 +1,31 @@
+---
+import Callout from "../../components/Callout.astro";
+import Banner from "../../components/Banner.astro";
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Base title={post.data.title}>
+  <article class=" max-w-2xl mx-auto mt-6">
+  <h1 class="text-4xl font-bold text-indigo-100 mb-6">
+    {post.data.title}
+  </h1>
+  
+  <Content components={{
+    Callout,
+    Banner
+  }} />
+</article>
+</Base>
