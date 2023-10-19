@@ -15,8 +15,9 @@ const { user } = Astro.props;
 ---
 
 <Base title={user.firstName}>
-  <h1 class="text-4xl font-bold text-indigo-100 mb-4 drop-shadow-glow">
+  <h1 class="text-4xl font-bold text-indigo-100 drop-shadow-glow">
     {user.firstName}&nbsp;{user.lastName}
-    <img class="w-20 mb-4" src={user.image} alt={user.firstName} />
   </h1>
+  <img class="w-20 mb-4" src={user.image} alt={user.firstName} />
+  <p>This is a dynamic route (created at build time)</p>
 </Base>
